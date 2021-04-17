@@ -1,0 +1,14 @@
+﻿@page
+@model CommentsModel
+@{
+    ViewData["Title"] = "Comments";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <form action="" method="post">
+        <div class="row"><input type="text" asp-for="comment.Author" placeholder="Your name"></div>
+        <div class="row"><input type="text" asp-for="comment.Message" placeholder="Your message"></div>
+        <div class="row"><button type="submit">Send</button></div>
+    </form>
+</div>
