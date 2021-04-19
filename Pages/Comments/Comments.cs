@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using adotest.Models;
+using System.Data;
 
 namespace tutorials_webapp.Pages.Comments
 {
@@ -24,15 +25,18 @@ namespace tutorials_webapp.Pages.Comments
         {
             // ADO CODE
             SqlConnection connection = new SqlConnection(ConnectionString);
+
+            //Sql Command
+            SqlCommand sqlCommand = new SqlCommand($"InsertComment", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            //Parameters
+            sqlCommand.Parameters.AddWithValue("@author", comment.Author);
+            sqlCommand.Parameters.AddWithValue("@message", comment.Author);
+
+            //Execute
             connection.Open();
-
-            //Query
-            string myCmd = $"Insert into Comment (Author, Message) values ('{comment.Author}', '{comment.Message}')";
-
-            //Command
-            SqlCommand cmd = new SqlCommand(myCmd, connection);
-            cmd.ExecuteNonQuery();
-
+            sqlCommand.ExecuteNonQuery();
             connection.Close();
 
             return RedirectToPage("../Index");
