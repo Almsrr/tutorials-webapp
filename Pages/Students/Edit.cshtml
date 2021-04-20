@@ -1,0 +1,48 @@
+﻿@page "{id?}"
+@model EditModel
+@{
+    ViewData["Title"] = "Editing student";
+}
+
+<a href="./Students">Back</a>
+<h1>@ViewData["Title"]</h1>
+<form method="post" class="my-5">
+    <div class=" row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="lastName" class="form-control" id="lastName">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input type="date" class="form-control" id="birthDate" aria-describedby="birthDate">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" id="genre" aria-describedby="genre">
+            <div id="emailHelp" class="form-text">Only M and F are available</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-5 col-md-6">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phoe">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

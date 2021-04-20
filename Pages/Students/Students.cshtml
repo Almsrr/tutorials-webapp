@@ -1,0 +1,45 @@
+﻿@page
+@using Models
+@model StudentsModel
+@{
+    ViewData["Title"] = "Students";
+}
+<h1 class="mt-3">@ViewData["Title"]</h1>
+
+<section class="mt-5">
+    <div class="d-grid gap-2 d-md-block mb-2">
+        <a class="btn btn-success text-white">New</a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Birth Date</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in @Model.students)
+            {
+                <tr>
+                    <th scope="row">@student.ID</th>
+                    <td>@student.Name</td>
+                    <td>@student.LastName</td>
+                    <td>@student.BirthDate</td>
+                    <td>@student.Genre</td>
+                    <td>@student.Email</td>
+                    <td>@student.PhoneNumer</td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="./Edit">Edit</a>
+                        <a class="btn btn-outline-danger" href="./Delete">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
