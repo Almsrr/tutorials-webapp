@@ -39,7 +39,7 @@ namespace tutorials_webapp.Pages
                             newStudent.BirthDate = Convert.ToString(reader["BirthDate"]);
                             newStudent.Genre = Convert.ToChar(reader["Genre"]);
                             newStudent.Email = Convert.ToString(reader["Email"]);
-                            newStudent.PhoneNumer = Convert.ToString(reader["PhoneNumber"]);
+                            newStudent.PhoneNumber = Convert.ToString(reader["PhoneNumber"]);
 
                             students.Add(newStudent);
                         }
