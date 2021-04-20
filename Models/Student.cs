@@ -8,6 +8,6 @@ namespace tutorials_webapp.Models
         public string BirthDate { get; set; }
         public char Genre { get; set; }
         public string Email { get; set; }
-        public string PhoneNumer { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }
