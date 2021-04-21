@@ -8,24 +8,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using tutorials_webapp.Models;
 using System.Data;
 
-namespace tutorials_webapp.Pages.Students
+namespace tutorials_webapp.Pages.Tutors
 {
-    public class StudentsEditModel : PageModel
+    public class TutorsEditModel : PageModel
     {
         public string ConnectionString = "Server=localhost;Database=REFODYDB;User Id=sa;Password=lcwPOa0MeRBtA0i3;";
 
         [BindProperty]
-        public Student currentStudent { get; set; }
+        public Tutor currentTutor { get; set; }
         public void OnGet(int id)
         {
-            Student current = new Student();
+
+            Tutor current = new Tutor();
             try
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
 
-                    SqlCommand command = new SqlCommand("GetStudentById", connection);
+                    SqlCommand command = new SqlCommand("GetTutorById", connection);
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@id", id);
 
@@ -39,7 +40,8 @@ namespace tutorials_webapp.Pages.Students
                             current.BirthDate = Convert.ToDateTime(reader["BirthDate"]);
                             current.Genre = Convert.ToChar(reader["Genre"]);
                             current.Email = Convert.ToString(reader["Email"]);
-                            current.PhoneNumber = Convert.ToString(reader["PhoneNumber"]);
+                            current.Address = Convert.ToString(reader["Address"]);
+                            current.Status = Convert.ToString(reader["Status"]);
 
                         }
                     }
@@ -49,8 +51,7 @@ namespace tutorials_webapp.Pages.Students
             {
                 throw;
             }
-            currentStudent = current;
-
+            currentTutor = current;
         }
 
 
@@ -61,16 +62,17 @@ namespace tutorials_webapp.Pages.Students
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("UpdateStudent", connection);
+                    SqlCommand command = new SqlCommand("UpdateTutor", connection);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@id", id);
-                    command.Parameters.AddWithValue("@name", currentStudent.Name);
-                    command.Parameters.AddWithValue("@lastName", currentStudent.LastName);
-                    command.Parameters.AddWithValue("@birthDate", currentStudent.BirthDate);
-                    command.Parameters.AddWithValue("@genre", currentStudent.Genre);
-                    command.Parameters.AddWithValue("@email", currentStudent.Email);
-                    command.Parameters.AddWithValue("@phoneNumber", currentStudent.PhoneNumber);
+                    command.Parameters.AddWithValue("@name", currentTutor.Name);
+                    command.Parameters.AddWithValue("@lastName", currentTutor.LastName);
+                    command.Parameters.AddWithValue("@birthDate", currentTutor.BirthDate);
+                    command.Parameters.AddWithValue("@genre", currentTutor.Genre);
+                    command.Parameters.AddWithValue("@email", currentTutor.Email);
+                    command.Parameters.AddWithValue("@address", currentTutor.Address);
+                    command.Parameters.AddWithValue("@status", currentTutor.Status);
 
                     command.ExecuteNonQuery();
                     return RedirectToPage("./Index");

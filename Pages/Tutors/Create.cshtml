@@ -5,51 +5,57 @@
     ViewData["Title"] = "Create tutor";
 }
 
-<a href="/Tutors">Back</a>
+<a href="./Index">Back</a>
 <h1>@ViewData["Title"]</h1>
+
 <form method="post" class="my-5">
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" asp-for="Tutor.Name" id="name" aria-describedby="name" value="Fernando">
+            <input type="text" class="form-control" asp-for="Tutor.Name" id="name" aria-describedby="name"
+                value="Esmelada">
         </div>
     </div>
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" asp-for="Tutor.LastName" id="lastName" value="Gruning">
+            <input type="text" class="form-control" asp-for="Tutor.LastName" id="lastName" value="Rosario">
         </div>
     </div>
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="birthDate" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" asp-for="Tutor.BirthDate" id="birthDate" aria-describedby="birthDate">
+            <input type="date" class="form-control" asp-for="Tutor.BirthDate" id="birthDate"
+                aria-describedby="birthDate">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" asp-for="Tutor.Genre" id="genre" aria-describedby="genre" value="M">
+            <input type="text" class="form-control" asp-for="Tutor.Genre" id="genre" aria-describedby="genre" value="F">
             <div asp-for="Tutor.EmailHelp" id="emailHelp" class="form-text">Only M and F are available</div>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" asp-for="Tutor.Email" id="email" aria-describedby="email" value="fernandojgruning@gmail.com">
+            <input type="email" class="form-control" asp-for="Tutor.Email" id="email" aria-describedby="email"
+                value="esmeralda@test.com">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" asp-for="Tutor.Address" id="address" aria-describedby="address" value="Sunset Blvd 56, LA 10898">
+            <input type="text" class="form-control" asp-for="Tutor.Address" id="address" aria-describedby="address"
+                value="Sunset Blvd 56, LA 10898">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="status" class="form-label">Status</label>
-            <input type="text" class="form-control" asp-for="Tutor.Status" id="status" aria-describedby="status" value="Active">
+            <input type="text" class="form-control" asp-for="Tutor.Status" id="status" aria-describedby="status"
+                value="Active">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-success">Create</button>
 </form>

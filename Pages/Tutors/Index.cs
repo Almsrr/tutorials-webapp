@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using tutorials_webapp.Models;
 
-namespace tutorials_webapp.Pages
+namespace tutorials_webapp.Pages.Tutors
 {
     public class TutorsModel : PageModel
     {
@@ -35,7 +35,7 @@ namespace tutorials_webapp.Pages
                             newTutor.ID = Convert.ToInt16(reader["ID"]);
                             newTutor.Name = Convert.ToString(reader["Name"]);
                             newTutor.LastName = Convert.ToString(reader["LastName"]);
-                            newTutor.BirthDate = Convert.ToString(reader["BirthDate"]);
+                            newTutor.BirthDate = Convert.ToDateTime(reader["BirthDate"]);
                             newTutor.Genre = Convert.ToChar(reader["Genre"]);
                             newTutor.Email = Convert.ToString(reader["Email"]);
                             newTutor.Address = Convert.ToString(reader["Address"]);

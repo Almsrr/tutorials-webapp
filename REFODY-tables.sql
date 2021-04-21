@@ -22,7 +22,7 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE [dbo].[Students]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
     [Name] NVARCHAR(100) NOT NULL,
     [LastName] NVARCHAR(100) NOT NULL,
     [BirthDate] DATE NOT NULL,
@@ -41,7 +41,7 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE [dbo].[Tutor]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
     [Name] NVARCHAR(100) NOT NULL,
     [LastName] NVARCHAR(100) NOT NULL,
     [BirthDate] DATE NOT NULL,
@@ -61,7 +61,7 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE [dbo].[Tutorial]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
     [TutorId] INT NOT NULL FOREIGN KEY REFERENCES Tutor(Id),
     [Status] NVARCHAR(25) NOT NULL,
     [Duration] INT NOT NULL,

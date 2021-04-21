@@ -36,12 +36,11 @@
                     <td>@tutor.Address</td>
                     <td>@tutor.Status</td>
                     <td>
-                        <a class="btn btn-outline-dark" href="./Edit">Edit</a>
-                        <a class="btn btn-outline-danger" href="./Delete">Delete</a>
+                        <a class="btn btn-outline-dark" asp-page="./Edit" asp-route-ID="@tutor.ID">Edit</a>
+                        @* <a class="btn btn-outline-danger" href="./Delete">Delete</a> *@
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </section>
-

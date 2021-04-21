@@ -1,3 +1,5 @@
+using System;
+
 namespace tutorials_webapp.Models
 {
     public class Tutor
@@ -5,7 +7,7 @@ namespace tutorials_webapp.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public char Genre { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

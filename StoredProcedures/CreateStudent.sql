@@ -1,3 +1,6 @@
+USE REFODYDB
+GO
+
 -- Create a new stored procedure called 'CreateStudent' in schema 'dbo'
 -- Drop the stored procedure if it already exists
 IF EXISTS (
