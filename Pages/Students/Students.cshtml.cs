@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using tutorials_webapp.Models;
 using System.Data;
@@ -36,15 +33,14 @@ namespace tutorials_webapp.Pages
                             newStudent.ID = Convert.ToInt16(reader["ID"]);
                             newStudent.Name = Convert.ToString(reader["Name"]);
                             newStudent.LastName = Convert.ToString(reader["LastName"]);
-                            newStudent.BirthDate = Convert.ToString(reader["BirthDate"]);
+                            newStudent.BirthDate = Convert.ToDateTime(reader["BirthDate"]);
                             newStudent.Genre = Convert.ToChar(reader["Genre"]);
                             newStudent.Email = Convert.ToString(reader["Email"]);
-                            newStudent.PhoneNumer = Convert.ToString(reader["PhoneNumber"]);
+                            newStudent.PhoneNumber = Convert.ToString(reader["PhoneNumber"]);
 
                             students.Add(newStudent);
                         }
                     }
-
                 }
             }
             catch (System.Exception)
