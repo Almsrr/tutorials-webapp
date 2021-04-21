@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data;
 using System.Data.SqlClient;
+using tutorials_webapp.Models;
 
 namespace tutorials_webapp.Pages
 {
@@ -34,7 +35,7 @@ namespace tutorials_webapp.Pages
                             tutorials_webapp.Models.Tutorial newTutorial = new tutorials_webapp.Models.Tutorial();
                             newTutorial.ID = Convert.ToInt16(reader["ID"]);
                             newTutorial.Comment = Convert.ToString(reader["Comment"]);
-                            newTutorial.Duration= Convert.ToInt16(reader["Duration"]);
+                            newTutorial.Duration = Convert.ToInt16(reader["Duration"]);
                             newTutorial.Price = Convert.ToDecimal(reader["Price"]);
                             newTutorial.Score = Convert.ToChar(reader["Score"]);
                             newTutorial.Status = Convert.ToString(reader["Status"]);
