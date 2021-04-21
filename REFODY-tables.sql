@@ -1,8 +1,5 @@
--- Create a new database called 'REFODYDB'
--- Connect to the 'master' database to run this snippet
 USE master
 GO
--- Create the new database if it does not exist already
 IF NOT EXISTS (
     SELECT [name]
         FROM sys.databases
@@ -14,34 +11,27 @@ GO
 USE REFODYDB
 GO
 
--- Create a new table called '[Students]' in schema '[dbo]'
--- Drop the table if it already exists
 IF OBJECT_ID('[dbo].[Students]', 'U') IS NOT NULL
 DROP TABLE [dbo].[Students]
 GO
--- Create the table in the specified schema
 CREATE TABLE [dbo].[Students]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [Name] NVARCHAR(100) NOT NULL,
     [LastName] NVARCHAR(100) NOT NULL,
     [BirthDate] DATE NOT NULL,
     [Genre] CHAR(1) NOT NULL,
     [Email] NVARCHAR(50) NOT NULL,
     [PhoneNumber] CHAR(10) NOT NULL
-    -- Specify more columns here
 );
 GO
 
--- Create a new table called '[Tutor]' in schema '[dbo]'
--- Drop the table if it already exists
 IF OBJECT_ID('[dbo].[Tutor]', 'U') IS NOT NULL
 DROP TABLE [dbo].[Tutor]
 GO
--- Create the table in the specified schema
 CREATE TABLE [dbo].[Tutor]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [Name] NVARCHAR(100) NOT NULL,
     [LastName] NVARCHAR(100) NOT NULL,
     [BirthDate] DATE NOT NULL,
@@ -49,25 +39,20 @@ CREATE TABLE [dbo].[Tutor]
     [Email] NVARCHAR(50) NOT NULL,
     [Address] NVARCHAR(100) NOT NULL,
     [Status] NVARCHAR(25)
-    -- Specify more columns here
 );
 GO
 
--- Create a new table called '[Tutorial]' in schema '[dbo]'
--- Drop the table if it already exists
 IF OBJECT_ID('[dbo].[Tutorial]', 'U') IS NOT NULL
 DROP TABLE [dbo].[Tutorial]
 GO
--- Create the table in the specified schema
 CREATE TABLE [dbo].[Tutorial]
 (
-    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Primary Key column
+    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [TutorId] INT NOT NULL FOREIGN KEY REFERENCES Tutor(Id),
     [Status] NVARCHAR(25) NOT NULL,
     [Duration] INT NOT NULL,
     [Price] DECIMAL(6, 2) NOT NULL,
     [Score] TINYINT NOT NULL,
     [Comment] NVARCHAR(200) NULL
-    -- Specify more columns here
 );
 GO

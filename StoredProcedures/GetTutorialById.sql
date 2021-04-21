@@ -11,13 +11,11 @@ WHERE SPECIFIC_SCHEMA = N'dbo'
 )
 DROP PROCEDURE dbo.GetTutorialById
 GO
--- Create the stored procedure in the specified schema
+
 CREATE PROCEDURE [dbo].[GetTutorialById]
-    @id /*parameter name*/ int /*datatype_for_param1*/ = 0 /*default_value_for_param1*/
--- add more stored procedure parameters here
+    @id int = 0
 AS
 BEGIN
-    -- body of the stored procedure
     SELECT * FROM Tutorial where Id = @id
 END
 
