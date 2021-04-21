@@ -1,0 +1,45 @@
+@page
+@using Models
+@model TutorialsModel
+@{
+    ViewData["Title"] = "Tutorials";
+}
+<h1 class="mt-3">@ViewData["Title"]</h1>
+
+<section class="mt-5">
+    <div class="d-grid gap-2 d-md-block mb-2">
+        <a class="btn btn-success text-white" href="/Tutorials/Create">New</a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Price</th>
+                <th scope="col">Score</th>
+                <th scope="col">Status</th>
+                <th scope="col">Tutor ID</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tutorial in @Model.tutorials)
+            {
+                <tr>
+                    <th scope="row">@tutorial.ID</th>
+                    <td>@tutorial.Comment</td>
+                    <td>@tutorial.Duration</td>
+                    <td>@tutorial.Price</td>
+                    <td>@tutorial.Score</td>
+                    <td>@tutorial.Status</td>
+                    <td>@tutorial.TutorId</td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="./Edit">Edit</a>
+                        <a class="btn btn-outline-danger" href="./Delete">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

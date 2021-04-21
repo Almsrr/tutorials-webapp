@@ -17,9 +17,9 @@ namespace tutorials_webapp.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public ActionResult OnGet()
         {
-
+            return Page();
         }
     }
 }
