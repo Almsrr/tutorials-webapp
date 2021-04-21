@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Tutorials";
 }
-<h1 class="mt-3">@ViewData["Title"]</h1>
+<h1 class="mt-3 tutorials">@ViewData["Title"]</h1>
 
 <section class="mt-5">
     <div class="d-grid gap-2 d-md-block mb-2">
@@ -35,7 +35,7 @@
                     <td>@tutorial.Status</td>
                     <td>@tutorial.TutorId</td>
                     <td>
-                        <a class="btn btn-outline-dark" href="./Edit">Edit</a>
+                        <a class="btn btn-outline-dark" asp-page="./Edit" asp-route-itemid="@tutorial.ID">Edit</a>
                         @* <a class="btn btn-outline-danger" href="./Delete">Delete</a> *@
                     </td>
                 </tr>

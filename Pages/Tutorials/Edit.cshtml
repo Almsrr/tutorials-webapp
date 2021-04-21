@@ -5,7 +5,7 @@
     ViewData["Title"] = "Editing student";
 }
 
-<a href="../Index">Back</a>
+<a href="./Index">Back</a>
 <h1>@ViewData["Title"]</h1>
 
 <form method="post" class="my-5" asp-route-itemid="currentTutorial.ID">
@@ -37,8 +37,7 @@
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
             <label for="email" class="form-label">Score</label>
-            <input type="email" class="form-control" id="email" aria-describedby="email"
-                asp-for="currentTutorial.Score">
+            <input type="text" class="form-control" id="email" aria-describedby="email" asp-for="currentTutorial.Score">
         </div>
     </div>
     <div class="row mb-3">

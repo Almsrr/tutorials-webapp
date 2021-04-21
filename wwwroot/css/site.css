@@ -70,3 +70,15 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.students {
+  color: #4287f5;
+}
+
+.tutors {
+  color: #42d7f5;
+}
+
+.tutorials {
+  color: #f5b342;
+}
