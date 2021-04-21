@@ -2,7 +2,7 @@
 @using Models
 @model TutorsEditModel
 @{
-    ViewData["Title"] = "Editing student";
+    ViewData["Title"] = "Edit tutor";
 }
 
 <a href="../Index">Back</a>
@@ -11,46 +11,45 @@
 <form method="post" class="my-5" asp-route-itemid="currentTutor.ID">
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="name" asp-for="currentTutor.Name">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" asp-for="currentTutor.Name">
         </div>
     </div>
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="lastName" class="form-control" id="lastName" asp-for="currentTutor.LastName">
+            <label class="form-label">Last Name</label>
+            <input type="lastName" class="form-control" asp-for="currentTutor.LastName">
         </div>
     </div>
     <div class=" row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="birthDate" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" id="birthDate" aria-describedby="birthDate"
-                asp-for="currentTutor.BirthDate">
+            <label class="form-label">Birth Date</label>
+            <input type="date" class="form-control" asp-for="currentTutor.BirthDate">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="genre" aria-describedby="genre" asp-for="currentTutor.Genre">
+            <label class="form-label">Genre</label>
+            <input type="text" class="form-control" asp-for="currentTutor.Genre">
             <div id="emailHelp" class="form-text">Only M and F are available</div>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" aria-describedby="email" asp-for="currentTutor.Email">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="currentTutor.Email">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="phone" class="form-label">Address</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phone" asp-for="currentTutor.Address">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" asp-for="currentTutor.Address">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-sm-5 col-md-6">
-            <label for="phone" class="form-label">Status</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phone" asp-for="currentTutor.Status">
+            <label class="form-label">Status</label>
+            <input type="text" class="form-control" asp-for="currentTutor.Status">
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
